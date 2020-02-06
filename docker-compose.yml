@@ -6,7 +6,7 @@ version: '3'
 
 services:
   nginx:
-    image: jwilder/nginx-proxy:alpine
+    image: arrkiin/nginx-proxy:alpine
     labels:
         com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     container_name: nginx
@@ -69,6 +69,7 @@ services:
       VIRTUAL_HOST: 
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_EMAIL: 
+      PROXY_PATH: guacamole
     depends_on:
       - postgres
       - guacd
