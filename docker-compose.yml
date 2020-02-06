@@ -70,6 +70,9 @@ services:
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_EMAIL: 
       PROXY_PATH: guacamole
+      GUACAMOLE_HOME: /root/config
+    volumes:
+      - ./config:/root/config
     depends_on:
       - postgres
       - guacd
